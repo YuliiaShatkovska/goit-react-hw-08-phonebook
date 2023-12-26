@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
 body {
     background-color: #51504F;
-    color: white;
+    color: #c0bfbf;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
     line-height: 1.5;
@@ -25,6 +25,11 @@ button {
 }
 input {
   font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 ul {
