@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import Notiflix from 'notiflix';
-import { Title } from 'components/Title/Title';
+import { Title } from '../Title/Title';
 import { addContact } from '../../redux/contacts/operations';
 import { selectContacts } from '../../redux/contacts/selectors';
 import {
@@ -29,7 +29,7 @@ const ContactForm = () => {
   const formNameId = nanoid();
   const numberId = nanoid();
 
-  const { contacts } = useSelector(selectContacts);
+  const contacts = useSelector(selectContacts);
 
   const dispatch = useDispatch();
 

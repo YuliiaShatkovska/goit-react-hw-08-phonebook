@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
+import Notiflix from 'notiflix';
 import { selectFiltredContacts } from '../../redux/contacts/selectors';
 import { deleteContacts } from '../../redux/contacts/operations';
 import { ContactsBtn, ContactsItem, ContactsList } from './ContactList.styled';
-import Notiflix from 'notiflix';
 
 const ContactList = () => {
   const dispatch = useDispatch();
@@ -19,17 +19,18 @@ const ContactList = () => {
 
   return (
     <ContactsList>
-      {contactList.map(el => (
-        <ContactsItem key={el.id}>
-          <div>
-            <b>{el.name}</b>: {el.number}
-          </div>
+      {contactList.length > 0 &&
+        contactList.map(el => (
+          <ContactsItem key={el.id}>
+            <div>
+              <b>{el.name}</b>: {el.number}
+            </div>
 
-          <ContactsBtn type="button" onClick={() => deleteContact(el)}>
-            Delete
-          </ContactsBtn>
-        </ContactsItem>
-      ))}
+            <ContactsBtn type="button" onClick={() => deleteContact(el)}>
+              Delete
+            </ContactsBtn>
+          </ContactsItem>
+        ))}
     </ContactsList>
   );
 };
