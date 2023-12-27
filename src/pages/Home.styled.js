@@ -3,11 +3,15 @@ import styled from 'styled-components';
 
 export const HomeTitle = styled.h1`
   width: 700px;
-  margin: 0 auto;
+
   text-align: center;
   font-weight: 600;
   color: #c0bfbf;
-
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 auto;
+  justify-content: center;
   border-radius: 8px;
   font-size: 40px;
 `;
