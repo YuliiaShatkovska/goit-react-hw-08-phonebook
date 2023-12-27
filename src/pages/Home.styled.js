@@ -5,12 +5,11 @@ export const HomeTitle = styled.h1`
   width: 700px;
   margin: 0 auto;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
   color: #c0bfbf;
-  box-shadow: 2px 2px 10px #7be8ea;
+
   border-radius: 8px;
-  font-size: 35px;
-  margin-top: 50px;
+  font-size: 40px;
 `;
 
 export const HomeText = styled.p`
@@ -20,10 +19,9 @@ export const HomeText = styled.p`
   text-align: center;
   font-weight: 500;
   color: #c0bfbf;
-  box-shadow: 2px 2px 10px #7be8ea;
+
   border-radius: 8px;
   font-size: 23px;
-  margin-top: 50px;
 `;
 
 export const HomeLink = styled(NavLink)`
@@ -32,4 +30,11 @@ export const HomeLink = styled(NavLink)`
   &:hover {
     color: #7be8ea;
   }
+`;
+
+export const HomeContainer = styled.div`
+  margin-top: 50px;
+  box-shadow: 2px 1px 15px #7be8ea;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
