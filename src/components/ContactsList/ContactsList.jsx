@@ -7,8 +7,9 @@ import { ContactsBtn, ContactsItem, ContactsList } from './ContactList.styled';
 const ContactList = () => {
   const dispatch = useDispatch();
 
-  const deleteContact = ({ id, name }) => {
-    dispatch(deleteContacts(id));
+  const deleteContact = ({ _id, name }) => {
+    console.log(_id, name);
+    dispatch(deleteContacts(_id));
     Notiflix.Notify.info(
       `
     The contact ${name} has been successfully deleted!`
@@ -16,12 +17,13 @@ const ContactList = () => {
   };
 
   const contactList = useSelector(selectFiltredContacts);
+  console.log(contactList);
 
   return (
     <ContactsList>
       {contactList.length > 0 &&
         contactList.map(el => (
-          <ContactsItem key={el.id}>
+          <ContactsItem key={el._id}>
             <div>
               <b>{el.name}</b>: {el.number}
             </div>

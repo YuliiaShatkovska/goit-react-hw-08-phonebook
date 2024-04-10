@@ -37,6 +37,7 @@ export const HomeLink = styled(NavLink)`
 `;
 
 export const HomeContainer = styled.div`
+  width: 100%;
   margin-top: 50px;
   box-shadow: 2px 1px 15px #7be8ea;
   padding-top: 20px;

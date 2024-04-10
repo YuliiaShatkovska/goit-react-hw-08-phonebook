@@ -48,6 +48,8 @@ export const RegisterForm = () => {
     Notiflix.Notify.info('Thank you! You have successfully registered!');
 
     form.reset();
+
+    
   };
 
   return (

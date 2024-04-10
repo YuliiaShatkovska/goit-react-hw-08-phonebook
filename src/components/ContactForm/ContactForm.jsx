@@ -23,17 +23,19 @@ const schema = yup.object().shape({
 const initialValues = {
   name: '',
   number: '',
+  email: '',
 };
 
 const ContactForm = () => {
   const formNameId = nanoid();
   const numberId = nanoid();
+  const emailId = nanoid();
 
   const contacts = useSelector(selectContacts);
 
   const dispatch = useDispatch();
 
-  const onHandleSubmit = ({ name, number }, { resetForm }) => {
+  const onHandleSubmit = ({ name, number, email }, { resetForm }) => {
     const sameName = contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
@@ -43,7 +45,7 @@ const ContactForm = () => {
       return;
     }
 
-    dispatch(addContact({ name, number }));
+    dispatch(addContact({ name, number, email }));
 
     Notiflix.Notify.info(`
     The contact ${name} has been successfully added!`);
@@ -67,6 +69,7 @@ const ContactForm = () => {
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              placeholder="Alice"
             />
 
             <ContactErrorMessage name="name" component="div" />
@@ -80,6 +83,17 @@ const ContactForm = () => {
               name="number"
               placeholder="+380"
               pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+            />
+            <ContactErrorMessage name="number" component="p" />
+          </InputContainer>
+
+          <InputContainer>
+            <label htmlFor={emailId}>Email</label>
+            <ContactInput
+              id={emailId}
+              type="email"
+              name="email"
+              placeholder="example@mail.com"
             />
             <ContactErrorMessage name="number" component="p" />
           </InputContainer>

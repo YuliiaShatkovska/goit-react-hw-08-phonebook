@@ -28,6 +28,12 @@ export const ContactInput = styled(Field)`
   &:hover {
     border-color: #7be8ea;
   }
+
+  > input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: transparent !important;
+  }
 `;
 
 export const ContactErrorMessage = styled(ErrorMessage)`
